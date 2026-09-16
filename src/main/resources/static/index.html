@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Student Budget Advisor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Smart Student Budget & Expense Advisor</h1>
+
+        <!-- Student Section -->
+        <div class="card">
+            <h2>Student Details</h2>
+
+            <input type="text" id="name" placeholder="Student Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="number" id="budget" placeholder="Monthly Budget">
+
+            <button onclick="addStudent()">Add Student</button>
+
+            <p id="studentMessage"></p>
+        </div>
+
+
+        <!-- Expense Section -->
+        <div class="card">
+            <h2>Add Expense</h2>
+
+            <input type="number" id="amount" placeholder="Amount">
+
+            <select id="category">
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="text" id="description" placeholder="Description">
+
+            <input type="date" id="expenseDate">
+
+            <button onclick="addExpense()">Add Expense</button>
+
+            <p id="expenseMessage"></p>
+        </div>
+
+
+        <!-- Dashboard -->
+        <div class="card">
+
+            <h2>Budget Dashboard</h2>
+
+            <p>Monthly Budget: ₹<span id="displayBudget">0</span></p>
+
+            <p>Total Spent: ₹<span id="totalSpent">0</span></p>
+
+            <p>Remaining Budget: ₹<span id="remaining">0</span></p>
+
+            <button onclick="loadExpenses()">Refresh Dashboard</button>
+
+            <h3>Advisor</h3>
+
+            <p id="advice">Add your expenses to get advice.</p>
+
+        </div>
+
+
+        <!-- Expense List -->
+        <div class="card">
+
+            <h2>Expense History</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expenseTable">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
